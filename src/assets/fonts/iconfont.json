@@ -1,0 +1,65 @@
+{
+  "id": "5038902",
+  "name": "学校代码工作室",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "705684",
+      "name": "日历",
+      "font_class": "rili",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "3522444",
+      "name": "学习",
+      "font_class": "xuexi",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "4111811",
+      "name": "代码",
+      "font_class": "code",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "5792029",
+      "name": "学生指导",
+      "font_class": "xueshengzhidao",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "6948848",
+      "name": "团队协作",
+      "font_class": "tuanduixiezuo",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "9397098",
+      "name": "目标",
+      "font_class": "icon-test",
+      "unicode": "e6df",
+      "unicode_decimal": 59103
+    },
+    {
+      "icon_id": "9535696",
+      "name": "学术成果",
+      "font_class": "xueshuchengguo",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "19465430",
+      "name": "冠军",
+      "font_class": "guanjun",
+      "unicode": "f0fd",
+      "unicode_decimal": 61693
+    }
+  ]
+}
