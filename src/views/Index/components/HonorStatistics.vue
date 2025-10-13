@@ -29,12 +29,13 @@ const data = ref([
   text-align: center;
 }
 .honor .item .total {
-  font-size: 3rem;
+  font-size: .5rem;
   font-weight: 700;
   color: var(--theme-color);
   margin-bottom: 10px;
 }
 .honor .item .title {
+  font-size: 16px;
   color: var(--normal-text);
 }
 </style>

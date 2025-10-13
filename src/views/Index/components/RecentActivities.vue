@@ -1,4 +1,6 @@
 <script setup>
+import router from '@/router';
+
 </script>
 
 <template>
@@ -11,16 +13,21 @@
       <div class="item" v-for="x in 3" :key="x">
         <h3>算法训练营</h3>
         <el-tag type="primary" effect="plain" round>培训</el-tag>
-        <div>2025年11月11日</div>
+        <div class="datetime">2025年11月11日</div>
       </div>
     </div>
-    <el-button>查看更多活动</el-button>
+    <div style="text-align: right;">
+      <el-button @click="router.push('/activities')">查看更多活动</el-button>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.header div {
+  font-size: 20px;
+}
 .recent-activities {
-  padding: 5rem;
+  padding: .8rem;
   /* --gradient-hero-blue: linear-gradient(135deg, hsl(217 91% 60% / .15) 0%, hsl(217 100% 65% / .1) 100%); */
   /* --gradient-hero-solid: linear-gradient(135deg, #4093FF 0%, #6BA8FF 100%); */
   /* background-color: var(--theme-color); */
@@ -55,11 +62,17 @@
 .activities-group .item .el-tag {
   margin: 15px 0;
 }
+.activities-group .item h3 {
+  font-size: 20px;
+}
+.activities-group .item .datetime {
+  font-size: 16px;
+}
 
 .recent-activities .el-button {
   margin-top: 20px;
   margin-right: 10px;
-  float: right;
+  /* float: right; */
   width: 116px;
   background: transparent;
   color: var(--normal-text);

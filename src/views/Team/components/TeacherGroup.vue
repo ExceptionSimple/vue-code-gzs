@@ -25,8 +25,11 @@ import TeacherItem from './TeacherItem.vue';
 .header .el-button {
   background-color: transparent;
 }
+.header h2 {
+  font-size: 0.4rem;
+}
 .header .iconfont {
-  font-size: 20px;
+  font-size: 0.4rem;
   color: var(--theme-color);
 }
 .item-group {

@@ -57,6 +57,7 @@
 .item .bottom {
   margin-top: 15px;
   color: var(--normal-text);
+  font-size: 16px;
 }
 
 .item .research-direction {

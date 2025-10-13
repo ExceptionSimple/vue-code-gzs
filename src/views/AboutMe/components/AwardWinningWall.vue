@@ -56,13 +56,13 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .header .title {
-  font-size: 1.8rem;
+  font-size: .4rem;
   margin-bottom: 20px;
   text-align: center;
 }
 .header .sub-title {
   color: var(--normal-text);
-  font-size: 1.3rem;
+  font-size: .3rem;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -99,6 +99,7 @@ onBeforeUnmount(() => {
   line-height: 25px;
   display: none;
   cursor: pointer;
+  font-size: .3rem;
 }
 .award-winning-wall .item:hover .mark {
   display: block;

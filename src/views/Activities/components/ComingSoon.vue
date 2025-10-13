@@ -7,7 +7,7 @@
       <h2> <span class="iconfont">&#xf0fd;</span> 即将开始</h2>
     </div>
     <div class="activities-group">
-      <div class="item">
+      <div class="item" v-for="x in 5" :key="x">
         <div class="top">
           <el-tag effect="light" round>培训</el-tag>
           <el-tag effect="light" round>报名中</el-tag>
@@ -34,14 +34,22 @@
   vertical-align: middle;
   margin-bottom: 30px;
 }
+.header h2 {
+  font-size: 30px;
+}
 .header .el-button {
   background-color: transparent;
 }
 .header .iconfont {
-  font-size: 20px;
+  font-size: 30px;
   color: var(--theme-color);
 }
+.activities-group {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
 .item {
+  margin: 10px;
   padding: 20px;
   background-color: #fff;
   max-width: 300px;
@@ -60,6 +68,9 @@
   justify-content: space-between;
   margin-bottom: 15px;
 }
+.item .middle .title {
+  font-size: 20px;
+}
 .item .middle .desc {
   padding: 15px 0;
   border-bottom: 1px solid #ccc;
@@ -69,5 +80,12 @@
 }
 .item .iconfont {
   color: var(--theme-color);
+}
+
+ul > li {
+  font-size: 16px;
+}
+ul .iconfont {
+  font-size: 16px;
 }
 </style>

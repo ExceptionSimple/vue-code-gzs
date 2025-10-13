@@ -53,4 +53,8 @@
   color: #409eff;
 }
 
+.header .logo {
+  font-size: 16px;
+}
+
 </style>

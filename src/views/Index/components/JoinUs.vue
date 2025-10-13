@@ -17,11 +17,11 @@
   text-align: center;
 }
 .join-us .title {
-  font-size: 2.5rem;
+  font-size: .6rem;
   font-weight: 700;
 }
 .join-us .sub-title {
-  font-size: 1.3rem;
+  font-size: .3rem;
   margin: 20px 0;
 }
 .join-us .el-button {

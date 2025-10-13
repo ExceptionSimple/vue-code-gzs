@@ -40,11 +40,11 @@ import AboutMeInfo from './components/AboutMeInfo.vue';
   background-image: var(--gradient-primary);
 }
 .header .iconfont {
-  font-size: 2.5rem;
+  font-size: 37px;
 }
 .header .title {
   font-weight: 700;
-  font-size: 3rem;
+  font-size: .6rem;
   background-image: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
@@ -53,18 +53,18 @@ import AboutMeInfo from './components/AboutMeInfo.vue';
 }
 .header .sub-title {
   color: var(--normal-text);
-  font-size: 1.3rem;
+  font-size: .3rem;
 }
 .we-story {
   text-align: center;
 }
 .we-story .title {
-  font-size: 1.8rem;
+  font-size: .4rem;
   margin-bottom: 20px;
 }
 .we-story .text {
   color: var(--normal-text);
   line-height: 30px;
-  font-size: 1.3rem;
+  font-size: .25rem;
 }
 </style>

@@ -62,7 +62,6 @@
 .item .bottom {
   margin-top: 15px;
   color: var(--normal-text);
-  height: 25px;
   overflow: hidden;
   white-space: nowrap;
 }

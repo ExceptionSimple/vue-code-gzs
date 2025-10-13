@@ -1,10 +1,21 @@
 <script setup>
+import { ref } from 'vue';
+
 import LayoutHeader from './components/LayoutHeader.vue';
+import LayoutMobileHeader from './components/LayoutMobileHeader.vue';
+
+const width = window.screen.width
+let mobileHeaderVisible = ref(false)
+
+if(width <= 768) {
+  mobileHeaderVisible.value = true
+}
 
 </script>
 
 <template>
-  <layout-header />
+  <layout-header v-if="!mobileHeaderVisible" />
+  <layout-mobile-header v-else />
   <RouterView />
   <el-footer>
     <div class="container">

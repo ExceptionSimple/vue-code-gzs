@@ -12,7 +12,7 @@
 
 <style scoped>
 .big-screen {
-  height: 500px;
+  height: 6.66666rem;
   /* background: linear-gradient(to bottom, #f0f6ff, #4093ff); */
   --gradient-hero: linear-gradient(135deg, hsl(217 91% 60% / .1) 0%, hsl(268 85% 65% / .1) 100%);
   background-image: var(--gradient-hero);
@@ -22,11 +22,11 @@
   align-items: center;
 }
 .big-screen h1 {
-  font-size: 4.5rem;
+  font-size: .8rem;
   color: var(--theme-color);
 }
 .big-screen .sub-title {
-  font-size: 1.5rem;
+  font-size: .3rem;
   color: var(--normal-text);
 }
 </style>

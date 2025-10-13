@@ -31,18 +31,18 @@
 
 <style scoped>
 .header .title {
-  font-size: 1.8rem;
+  font-size: .4rem;
   margin-bottom: 20px;
   text-align: center;
 }
 .header .sub-title {
   color: var(--normal-text);
-  font-size: 1.3rem;
+  font-size: .3rem;
   text-align: center;
   margin-bottom: 30px;
 }
 .info-group {
-  width: 500px;
+  width: 6.66666rem;
   margin: 0 auto;
 }
 .item {
@@ -61,6 +61,9 @@
 }
 .item .iconfont {
   font-size: 25px;
+}
+.info .title {
+  font-size: 18px;
 }
 .info p {
   font-size: 16px;

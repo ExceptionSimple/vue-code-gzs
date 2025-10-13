@@ -20,10 +20,14 @@
   align-items: center;
   height: 300px;
   flex: 1;
+  box-shadow: none;
 }
 .feature-card h3 {
   font-size: 25px;
   margin: 20px 0;
+}
+.feature-card p {
+  font-size: 16px;
 }
 .feature-card .iconfont {
   font-size: 50px;

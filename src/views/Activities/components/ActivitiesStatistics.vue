@@ -28,13 +28,14 @@ const data = ref([
   text-align: center;
 }
 .honor .item .total {
-  font-size: 2rem;
+  font-size: .8rem;
   font-weight: 700;
   color: var(--theme-color);
   margin-bottom: 10px;
 }
 .honor .item .title {
   color: var(--normal-text);
+  font-size: 16px;
 }
 .honor .item.cyrs .total {
   color: #a15af2;

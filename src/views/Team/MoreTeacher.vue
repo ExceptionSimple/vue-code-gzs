@@ -38,7 +38,7 @@ import TeacherItem from './components/TeacherItem.vue';
   font-size: 25px;
 }
 .header .title {
-  font-size: 2rem;
+  font-size: .6rem;
   font-weight: 700;
   background-image: var(--gradient-primary);
   -webkit-background-clip: text;
@@ -47,7 +47,7 @@ import TeacherItem from './components/TeacherItem.vue';
 }
 .header .total {
   color: var(--normal-text);
-  font-size: 1.3rem;
+  font-size: .3rem;
 }
 .teacher-group {
   margin-top: 50px;

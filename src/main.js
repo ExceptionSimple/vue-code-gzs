@@ -1,5 +1,8 @@
 import '@/styles/common.css'
 import '@/styles/color.css'
+import '@/styles/media.css'
+
+import '@/js/flexible'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'

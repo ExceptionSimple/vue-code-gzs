@@ -1,0 +1,69 @@
+/* 如果屏幕超过了750px，那么我们就就按照750px设计稿来走，不会让页面超过750px ,使用媒体查询来设置*/
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 75px !important;
+  }
+}
+body {
+  /* min-width: 320px;
+  max-width: 750px; */
+ /* flexible.js把设计稿750px进行10等分，所以html文字大小设置为75px(750px/ 10)，页面元素rem值:页面元素的px值/ 75(750px/75)*/
+  /* width: 10rem; */
+  /* margin: 0 auto; */
+}
+
+@media(max-width: 1440px) {
+  .container {
+    width: 1280px;
+  }
+}
+
+@media(max-width: 1280px) {
+  .container {
+    width: 992px;
+  }
+  .activities-group {
+    grid-template-columns: auto auto auto !important;
+  }
+}
+
+@media(max-width: 992px) {
+  .container {
+    width: 768px;
+  }
+  .activities-group {
+    grid-template-columns: auto auto !important;
+  }
+}
+
+@media(max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+  .recent-activities .activities-group {
+    flex-direction: column;
+  }
+  .feature-card .iconfont {
+    font-size: 45px !important;
+  }
+  .feature-card h3 {
+    font-size: 16px !important;
+  }
+  .feature-card p {
+    font-size: 12px !important;
+  }
+
+  .teacher-group,
+  .teacher-group .item-group {
+    grid-template-columns: auto !important;
+  }
+  .activities-group .item {
+    max-width: none !important;
+  }
+}
+
+@media(max-width: 576px) {
+  .activities-group {
+    grid-template-columns: auto !important;
+  }
+}

@@ -35,11 +35,11 @@ import ActivitiesStatistics from './components/ActivitiesStatistics.vue';
   background-image: var(--gradient-primary);
 }
 .header .iconfont {
-  font-size: 2.5rem;
+  font-size: 37px;
 }
 .header .title {
   font-weight: 700;
-  font-size: 3rem;
+  font-size: .6rem;
   background-image: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
@@ -48,6 +48,6 @@ import ActivitiesStatistics from './components/ActivitiesStatistics.vue';
 }
 .header .sub-title {
   color: var(--normal-text);
-  font-size: 1.3rem;
+  font-size: .3rem;
 }
 </style>
