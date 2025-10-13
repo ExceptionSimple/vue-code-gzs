@@ -1,6 +1,8 @@
 <script setup>
 import ComingSoon from './components/ComingSoon.vue';
 import PastActivities from './components/PastActivities.vue';
+import ActivitiesStatistics from './components/ActivitiesStatistics.vue';
+
 </script>
 
 <template>
@@ -13,6 +15,7 @@ import PastActivities from './components/PastActivities.vue';
   </div>
   <coming-soon class="container" style="margin-bottom: 50px;" />
   <past-activities class="container" />
+  <activities-statistics class="container" />
 </template>
 
 <style scoped>
