@@ -3,6 +3,7 @@ import BigScreenContent from './components/BigScreenContent.vue';
 import FeatureCard from './components/FeatureCard.vue';
 import RecentActivities from './components/RecentActivities.vue';
 import HonorStatistics from './components/HonorStatistics.vue';
+import JoinUs from './components/JoinUs.vue';
 
 </script>
 
@@ -13,6 +14,7 @@ import HonorStatistics from './components/HonorStatistics.vue';
   </div>
   <recent-activities class="container" />
   <honor-statistics class="container" />
+  <join-us />
 </template>
 
 <style scoped>
