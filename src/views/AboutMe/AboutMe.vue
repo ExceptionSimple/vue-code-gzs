@@ -1,5 +1,6 @@
 <script setup>
 import AwardWinningWall from './components/AwardWinningWall.vue';
+import AboutMeInfo from './components/AboutMeInfo.vue';
 </script>
 
 <template>
@@ -19,6 +20,7 @@ import AwardWinningWall from './components/AwardWinningWall.vue';
     </div>
   </div>
   <AwardWinningWall style="margin-top: 50px;" />
+  <AboutMeInfo style="margin-top: 50px;" />
 </template>
 
 <style scoped>
