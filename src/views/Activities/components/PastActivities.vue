@@ -10,7 +10,8 @@
       <div class="item">
         <div class="top">
           <el-tag effect="light" round>培训</el-tag>
-          <el-tag effect="light" round>已结束</el-tag>
+          <!-- <el-tag effect="light" round>已结束</el-tag> -->
+           <span class="iconfont finished">&#xe70d;</span>
         </div>
         <div class="middle">
           <h3 class="title">新生代码入门讲座</h3>
@@ -47,6 +48,13 @@
   transition: all .5s ease;
   border-radius: 10px;
   border: 1px solid #ccc;
+  position: relative;
+}
+.item .finished {
+  position: absolute;
+  font-size: 99px;
+  top: 5px;
+  right: 10px;
 }
 .item:hover {
   transform: translateY(-15px);

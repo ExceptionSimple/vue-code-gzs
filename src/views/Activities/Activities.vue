@@ -1,5 +1,6 @@
 <script setup>
 import ComingSoon from './components/ComingSoon.vue';
+import PastActivities from './components/PastActivities.vue';
 </script>
 
 <template>
@@ -10,7 +11,8 @@ import ComingSoon from './components/ComingSoon.vue';
     <div class="title">活动中心</div>
     <div class="sub-title">参与丰富多彩的技术活动，提升编程技能，结识志同道合的伙伴</div>
   </div>
-  <coming-soon class="container" />
+  <coming-soon class="container" style="margin-bottom: 50px;" />
+  <past-activities class="container" />
 </template>
 
 <style scoped>
