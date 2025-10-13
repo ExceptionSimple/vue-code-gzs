@@ -34,7 +34,7 @@
 .header a {
   text-align: center;
   transition: color 0.2s;
-  color: var(--body-color);
+  color: var(--normal-text);
 }
 .header ul {
   /* display: flex; */
