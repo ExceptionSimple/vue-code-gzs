@@ -29,7 +29,7 @@ const data = ref([
   text-align: center;
 }
 .honor .item .total {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--theme-color);
   margin-bottom: 10px;
