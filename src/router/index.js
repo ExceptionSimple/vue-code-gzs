@@ -4,6 +4,7 @@ import Index from '@/views/Index/Index.vue'
 import AboutMe from '@/views/AboutMe/AboutMe.vue'
 import Activities from '@/views/Activities/Activities.vue'
 import Team from '@/views/Team/Team.vue'
+import MoreTeacher from '@/views/Team/MoreTeacher.vue'
 
 
 const router = createRouter({
@@ -18,6 +19,7 @@ const router = createRouter({
         { path: 'team', component: Team },
         { path: 'activities', component: Activities },
         { path: 'aboutMe', component: AboutMe },
+        { path: 'more_teacher', component: MoreTeacher }
       ]
     }
   ],
