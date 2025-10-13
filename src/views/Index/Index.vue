@@ -1,6 +1,7 @@
 <script setup>
 import BigScreenContent from './components/BigScreenContent.vue';
 import FeatureCard from './components/FeatureCard.vue';
+import RecentActivities from './components/RecentActivities.vue';
 
 </script>
 
@@ -9,6 +10,7 @@ import FeatureCard from './components/FeatureCard.vue';
   <div class="feature-group container">
     <feature-card v-for="x in 3" :key="x" />
   </div>
+  <recent-activities class="container" />
 </template>
 
 <style scoped>
