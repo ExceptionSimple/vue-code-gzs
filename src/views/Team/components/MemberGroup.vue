@@ -4,22 +4,26 @@
 <template>
   <div class="teacher-group">
     <div class="header">
-      <h2> <span class="iconfont">&#xe607;</span> 指导老师</h2>
-      <el-button>查看所有老师</el-button>
+      <h2> <span class="iconfont">&#xe600;</span> 工作室成员</h2>
+      <el-button>查看所有成员</el-button>
     </div>
     <div class="item-group">
-      <div class="item" v-for="x in 2" :key="x">
+      <div class="item" v-for="x in 4" :key="x">
         <div class="top">
           <div class="avatar">
             <img src="@/assets/avatar.jpg" alt="" />
           </div>
           <div class="right">
-            <div class="name">俞文静</div>
-            <div class="tag">指导老师</div>
+            <div class="name">陶智坤</div>
+            <div class="tag">工作室·室长</div>
+            <div class="grade">大二</div>
           </div>
         </div>
-        <div class="bottom">
-          <div class="desc">在计算机领域...</div>
+        <div class="bottom line-ellipsis">
+          <el-tag effect="light" round>Java</el-tag>
+          <el-tag effect="light" round>Java</el-tag>
+          <el-tag effect="light" round>Java</el-tag>
+          <el-tag effect="light" round>Java</el-tag>
         </div>
       </div>
     </div>
@@ -72,9 +76,19 @@
   font-size: 14px;
   color: var(--theme-color);
 }
+.item .right .grade {
+  font-size: 14px;
+  color: var(--normal-text);
+}
 .item .bottom {
   margin-top: 15px;
   color: var(--normal-text);
+  height: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.item .bottom .el-tag {
+  margin-right: 5px;
 }
 
 </style>

@@ -1,5 +1,6 @@
 <script setup>
 import TeacherGroup from './components/TeacherGroup.vue';
+import MemberGroup from './components/MemberGroup.vue';
 
 </script>
 
@@ -12,6 +13,7 @@ import TeacherGroup from './components/TeacherGroup.vue';
     <div class="sub-title">由经验丰富的导师和充满激情的学生组成的技术团队</div>
   </div>
   <teacher-group class="container" />
+  <member-group class="container" style="margin: 50px auto;" />
 </template>
 
 <style scoped>

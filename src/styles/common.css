@@ -38,6 +38,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.line-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @font-face {
   font-family: 'iconfont';
   src: url('../assets/fonts/iconfont.woff2?t=1760288640665') format('woff2'),
