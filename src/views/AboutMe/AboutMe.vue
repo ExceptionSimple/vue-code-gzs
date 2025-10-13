@@ -20,7 +20,7 @@ import AboutMeInfo from './components/AboutMeInfo.vue';
     </div>
   </div>
   <AwardWinningWall style="margin-top: 50px;" />
-  <AboutMeInfo style="margin-top: 50px;" />
+  <AboutMeInfo style="margin-top: 50px; margin-bottom: 100px;" />
 </template>
 
 <style scoped>
