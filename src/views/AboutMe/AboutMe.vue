@@ -18,7 +18,7 @@ import AwardWinningWall from './components/AwardWinningWall.vue';
       我们相信，技术改变世界，而教育改变未来。在这里，无论你是编程新手还是技术达人，都能找到属于自己的位置，与志同道合的伙伴一起追求技术梦想。
     </div>
   </div>
-  <AwardWinningWall />
+  <AwardWinningWall style="margin-top: 50px;" />
 </template>
 
 <style scoped>
