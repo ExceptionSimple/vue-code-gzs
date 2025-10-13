@@ -51,10 +51,15 @@
 .item-group .item {
   flex: 1;
   margin: 10px;
-  box-shadow: 0 0 20px 3px rgba(0,0,0, 0.13);
   padding: 20px;
   border-radius: 10px;
   cursor: pointer;
+  transition: all .5s ease;
+  border: 1px solid #ccc;
+}
+.item-group .item:hover {
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, .13);
+  border-color: transparent;
 }
 .item-group .item .top {
   display: flex;

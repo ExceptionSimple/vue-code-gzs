@@ -17,6 +17,9 @@
             <div class="name">俞文静</div>
             <div class="tag">指导老师</div>
           </div>
+          <div class="research-direction">
+            <el-tag effect="light">语音识别</el-tag>
+          </div>
         </div>
         <div class="bottom">
           <div class="desc">在计算机领域...</div>
@@ -47,10 +50,15 @@
 .item-group .item {
   flex: 1;
   margin: 10px;
-  box-shadow: 0 0 20px 3px rgba(0,0,0, 0.13);
   padding: 20px;
   border-radius: 10px;
   cursor: pointer;
+  transition: all .5s ease;
+  border: 1px solid #ccc;
+}
+.item-group .item:hover {
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, .13);
+  border-color: transparent;
 }
 .item-group .item .top {
   display: flex;
@@ -75,6 +83,15 @@
 .item .bottom {
   margin-top: 15px;
   color: var(--normal-text);
+}
+
+.item .research-direction {
+  flex: 1;
+  margin-left: 20px;
+}
+.item .research-direction .title {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 </style>
