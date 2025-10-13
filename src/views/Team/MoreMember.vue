@@ -1,5 +1,5 @@
 <script setup>
-import TeacherItem from './components/TeacherItem.vue';
+import MemberItem from './components/MemberItem.vue';
 
 </script>
 
@@ -9,12 +9,12 @@ import TeacherItem from './components/TeacherItem.vue';
       <span class="iconfont">&#xe607;</span>
     </div>
     <div>
-      <div class="title">全部指导老师</div>
-      <div class="total">共 10 位老师</div>
+      <div class="title">全部成员</div>
+      <div class="total">共 10 位成员</div>
     </div>
   </div>
   <div class="teacher-group container">
-    <teacher-item v-for="x in 10" :key="x" />
+    <member-item v-for="x in 10" :key="x" />
   </div>
 </template>
 
@@ -52,7 +52,7 @@ import TeacherItem from './components/TeacherItem.vue';
 .teacher-group {
   margin-top: 50px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto auto ;
 }
 
 </style>
