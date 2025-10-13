@@ -1,4 +1,5 @@
 <script setup>
+import ComingSoon from './components/ComingSoon.vue';
 </script>
 
 <template>
@@ -9,6 +10,7 @@
     <div class="title">活动中心</div>
     <div class="sub-title">参与丰富多彩的技术活动，提升编程技能，结识志同道合的伙伴</div>
   </div>
+  <coming-soon class="container" />
 </template>
 
 <style scoped>
