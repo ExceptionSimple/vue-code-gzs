@@ -1,4 +1,5 @@
 <script setup>
+import AwardWinningWall from './components/AwardWinningWall.vue';
 </script>
 
 <template>
@@ -17,6 +18,7 @@
       我们相信，技术改变世界，而教育改变未来。在这里，无论你是编程新手还是技术达人，都能找到属于自己的位置，与志同道合的伙伴一起追求技术梦想。
     </div>
   </div>
+  <AwardWinningWall />
 </template>
 
 <style scoped>
@@ -51,7 +53,16 @@
   color: var(--normal-text);
   font-size: 1.3rem;
 }
+.we-story {
+  text-align: center;
+}
+.we-story .title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
 .we-story .text {
   color: var(--normal-text);
+  line-height: 30px;
+  font-size: 1.3rem;
 }
 </style>
