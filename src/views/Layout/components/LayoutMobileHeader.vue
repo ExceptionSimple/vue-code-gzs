@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { ref, onMounted, onUnmounted } from "vue";
 import router from '@/router'
 import { Menu } from '@element-plus/icons-vue'
 
@@ -27,10 +27,26 @@ const showAside = () => {
 }
 
 
+const isFixed = ref(false)
+const scrollThreshold = 60 // 滚动多少像素后固定
+
+const handleScroll = () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+  isFixed.value = scrollTop > scrollThreshold
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll, { passive: true })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
 </script>
 
 <template>
-  <el-header>
+  <el-header :class="{ 'fixed': isFixed }">
     <el-icon @click.stop="showAside"><Menu /></el-icon>
     <div class="logo">智慧代码工作室</div>
   </el-header>
@@ -61,11 +77,20 @@ const showAside = () => {
   background-color: rgba(0,0,0, .3);
   z-index: 99;
 }
+.el-header.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 50px;
+  left: 0;
+}
 .el-header {
   height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--header-bg-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);;
 }
 .el-header .el-icon {
   font-size: 25px;
