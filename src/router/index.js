@@ -6,6 +6,7 @@ import Activities from '@/views/Activities/Activities.vue'
 import Team from '@/views/Team/Team.vue'
 import MoreTeacher from '@/views/Team/MoreTeacher.vue'
 import MoreMember from '@/views/Team/MoreMember.vue'
+import CooperativeEnterprises from '@/views/CooperativeEnterprises/CooperativeEnterprises.vue'
 
 
 const router = createRouter({
@@ -21,7 +22,8 @@ const router = createRouter({
         { path: 'activities', component: Activities },
         { path: 'aboutMe', component: AboutMe },
         { path: 'more_teacher', component: MoreTeacher },
-        { path: 'more_member', component: MoreMember }
+        { path: 'more_member', component: MoreMember },
+        { path: 'cooperative_enterprises', component: CooperativeEnterprises },
       ]
     }
   ],

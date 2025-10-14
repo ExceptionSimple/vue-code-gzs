@@ -14,6 +14,7 @@
         <li><RouterLink to="/index">首页</RouterLink></li>
         <li><RouterLink to="/team">团队</RouterLink></li>
         <li><RouterLink to="/activities">活动</RouterLink></li>
+        <li><RouterLink to="/cooperative_enterprises">合作企业</RouterLink></li>
         <li><RouterLink to="/AboutMe">关于我们</RouterLink></li>
       </ul>
     </div>

@@ -66,4 +66,14 @@ body {
   .activities-group {
     grid-template-columns: auto !important;
   }
+  .enterprises-item {
+    flex-direction: column;
+    align-items: center;
+  }
+  .enterprises-item .title {
+    font-size: 0.5rem !important;
+  }
+  .enterprises-item .desc {
+    font-size: 0.3rem !important;
+  }
 }

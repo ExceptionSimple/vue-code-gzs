@@ -1,11 +1,13 @@
 <script setup>
+import router from '@/router';
+
 </script>
 
 <template>
   <div class="join-us">
     <div class="title">准备好开启编程之旅了吗？</div>
     <div class="sub-title">加入我们，在代码的世界里探索无限可能</div>
-    <el-button size="large">了解更多</el-button>
+    <el-button size="large" @click="router.push('/aboutMe')">了解更多</el-button>
   </div>
 </template>
 

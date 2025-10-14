@@ -44,7 +44,8 @@ const showAside = () => {
       <el-menu-item index="0" @click="$router.push('/index')">首页</el-menu-item>
       <el-menu-item index="1" @click="$router.push('/team')">团队</el-menu-item>
       <el-menu-item index="2" @click="$router.push('/activities')">活动</el-menu-item>
-      <el-menu-item index="3" @click="$router.push('/aboutMe')">关于我们</el-menu-item>
+      <el-menu-item index="3" @click="$router.push('/cooperative_enterprises')">合作企业</el-menu-item>
+      <el-menu-item index="4" @click="$router.push('/aboutMe')">关于我们</el-menu-item>
     </el-menu>
   </el-aside>
   <div class="mark" v-if="isAsideActive"></div>

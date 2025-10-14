@@ -96,9 +96,12 @@ onBeforeUnmount(() => {
   color: white;
   padding: 10px;
   border-radius: 10px;
-  line-height: 25px;
+  line-height: .4rem;
   display: none;
   cursor: pointer;
+  font-size: .3rem;
+}
+.award-winning-wall .mark .iconfont {
   font-size: .3rem;
 }
 .award-winning-wall .item:hover .mark {
