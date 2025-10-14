@@ -8,6 +8,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
+// 压缩
+import viteCompression from 'vite-plugin-compression'
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -18,6 +21,14 @@ export default defineConfig({
     }),
     Components({
       resolvers: [ElementPlusResolver()]
+    }),
+    // gzip 压缩
+    viteCompression({
+      verbose: false,
+      disable: false,
+      threshold: 10240, // 10kb 以上才压缩
+      algorithm: 'gzip',
+      ext: '.gz'
     })
   ],
   resolve: {
@@ -26,6 +37,7 @@ export default defineConfig({
     },
   },
   server: {
-    host: '0.0.0.0'
+    port: 9991,
+    // host: '0.0.0.0'
   }
 })
