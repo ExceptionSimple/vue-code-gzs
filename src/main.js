@@ -1,6 +1,7 @@
 import '@/styles/common.css'
 import '@/styles/color.css'
 import '@/styles/media.css'
+import '@/assets/fonts/iconfont.css'
 
 import '@/js/flexible'
 

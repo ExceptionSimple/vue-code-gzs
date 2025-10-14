@@ -1,13 +1,17 @@
 <script setup>
+const props = defineProps({
+  data: Object
+})
+
 </script>
 
 <template>
   <Card class="feature-card">
     <div>
-      <span class="iconfont">&#xe607;</span>
+      <span :class="['iconfont', data.icon]"></span>
     </div>
-    <h3>技术学习</h3>
-    <p>系统化的编程培训课程，从基础到进阶，助你快速成长</p>
+    <h3>{{ data.title }}</h3>
+    <p>{{ data.desc }}</p>
   </Card>
 </template>
 
