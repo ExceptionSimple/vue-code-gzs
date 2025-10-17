@@ -1,21 +1,38 @@
 <script setup>
+import { ref } from 'vue';
 import router from '@/router';
 import MemberItem from './MemberItem.vue';
+import CardDesc from './CardDesc.vue';
+
+const hideFlag = ref(true)
+
+const showDesc = (e, id) => {
+  e.stopPropagation()
+  hideFlag.value = false
+}
+const closeCardDesc = () => {
+  hideFlag.value = true
+}
+
 </script>
 
 <template>
-  <div class="teacher-group">
+  <div class="member-group container">
     <div class="header">
       <h2> <span class="iconfont">&#xe600;</span> 工作室成员</h2>
       <el-button @click="router.push('/more_member')">查看所有成员</el-button>
     </div>
     <div class="item-group">
-      <member-item v-for="x in 8" :key="x" />
+      <member-item v-for="x in 8" :key="x" @click="showDesc($event, x)" />
     </div>
   </div>
+  <card-desc :hide="hideFlag" @close="closeCardDesc" />
 </template>
 
 <style scoped>
+.member-group {
+  margin: 50px auto;
+}
 .header {
   display: flex;
   justify-content: space-between;
