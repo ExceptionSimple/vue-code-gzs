@@ -43,6 +43,7 @@ onUnmounted(() => {
   right: 0;
   bottom: 50px;
   left: 0;
+  z-index: 9999;
 }
 .header {
   height: 50px;

@@ -1,4 +1,18 @@
 <script setup>
+import { ref } from 'vue';
+import { finishedAPI } from '@/api/activities';
+
+const data = ref([])
+
+finishedAPI().then(resp => {
+  if(resp.code !== 1) return
+  data.value = resp.data
+})
+
+const toURL = (url) => {
+  location.href = url
+}
+
 </script>
 
 <template>
@@ -7,19 +21,18 @@
       <h2> <span class="iconfont">&#xe620;</span> 往期活动</h2>
     </div>
     <div class="activities-group">
-      <div class="item" v-for="x in 5" :key="x">
+      <div class="item" v-for="item in data" :key="item.id" @click="toURL(item.url)">
         <div class="top">
           <el-tag effect="light" round>培训</el-tag>
-          <!-- <el-tag effect="light" round>已结束</el-tag> -->
            <span class="iconfont finished">&#xe70d;</span>
         </div>
         <div class="middle">
-          <h3 class="title">新生代码入门讲座</h3>
-          <div class="desc">深入了解算法...</div>
+          <h3 class="title">{{ item.title }}</h3>
+          <div class="desc">{{ item.desc }}</div>
         </div>
         <ul>
-          <li><span class="iconfont">&#xe620;</span> 2025年10月13日</li>
-          <li><span class="iconfont">&#xe65b;</span> 已报名 23 人 </li>
+          <li><span class="iconfont">&#xe620;</span> {{ item.datetime }} </li>
+          <li><span class="iconfont">&#xe65b;</span> 已报名 xx 人 </li>
         </ul>
       </div>
     </div>
@@ -63,6 +76,7 @@
   font-size: 99px;
   top: 5px;
   right: 10px;
+  color: #ff5454 !important;
 }
 .item:hover {
   transform: translateY(-15px);

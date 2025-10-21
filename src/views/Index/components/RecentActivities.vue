@@ -1,5 +1,14 @@
 <script setup>
+import { ref } from 'vue';
 import router from '@/router';
+import { recentActivitiesAPI } from '@/api/activities';
+
+const data = ref([])
+
+recentActivitiesAPI().then((resp) => {
+  if(resp.code !== 1) return
+  data.value = resp.data
+})
 
 </script>
 
@@ -10,10 +19,10 @@ import router from '@/router';
       <div>精彩不断，等你参与</div>
     </div>
     <div class="activities-group">
-      <div class="item" v-for="x in 3" :key="x">
-        <h3>算法训练营</h3>
-        <el-tag type="primary" effect="plain" round>培训</el-tag>
-        <div class="datetime">2025年11月11日</div>
+      <div class="item" v-for="item in data" :key="item">
+        <h3>{{ item.title }}</h3>
+        <el-tag type="primary" effect="plain" round>{{ item.type }}</el-tag>
+        <div class="datetime">{{ item.datetime }}</div>
       </div>
     </div>
     <div style="text-align: right;">
