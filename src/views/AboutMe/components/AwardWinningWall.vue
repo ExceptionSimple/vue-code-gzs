@@ -1,5 +1,14 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
+import { allAwardAPI } from '@/api/award'
+
+const awardList = ref([])
+
+allAwardAPI().then(resp => {
+  console.log(resp.data)
+  if(resp.code !== 1) return
+  awardList.value = resp.data
+})
 
 const awardTrackRef = ref(null)
 let scrollTimer = null
@@ -41,12 +50,12 @@ onBeforeUnmount(() => {
     </div>
     <div class="scroll-container container">
       <div class="awards-track" ref="awardTrackRef">
-        <div class="item" v-for="x in 20" :key="x">
-          <img src="@/assets/1.jpg" alt="xxxx" />
+        <div class="item" v-for="item in awardList" :key="item.id">
+          <img :src="item.certificate" />
           <div class="mark">
-            <p>获奖名称：xxxx大赛</p>
-            <p>获奖成员：张三、李四、王五</p>
-            <p><span class="iconfont">&#xe680;</span> 2025年10月13日</p>
+            <p>获奖名称：{{ item.name }}</p>
+            <p>获奖成员：{{ item.member }}</p>
+            <p><span class="iconfont">&#xe680;</span> {{ item.winningTime }}</p>
           </div>
         </div>
       </div>
@@ -78,15 +87,22 @@ onBeforeUnmount(() => {
   white-space: nowrap;
 }
 
+.award-winning-wall .item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
 .award-winning-wall .item {
   display: inline-block;
   width: 320px;
   height: 225px;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
   background-color: #ccc;
   position: relative;
   margin-right: 10px;
+  box-sizing: border-box;
 }
 
 .award-winning-wall .item .mark {
@@ -99,7 +115,7 @@ onBeforeUnmount(() => {
   line-height: .4rem;
   display: none;
   cursor: pointer;
-  font-size: .3rem;
+  font-size: .25rem;
 }
 .award-winning-wall .mark .iconfont {
   font-size: .3rem;
