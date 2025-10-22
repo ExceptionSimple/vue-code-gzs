@@ -1,5 +1,21 @@
 <script setup>
+import { ref } from 'vue';
 import TeacherItem from './components/TeacherItem.vue';
+
+import { getTeacherListAPI } from '@/api/teacher';
+
+const data = ref({
+  page: 1,
+  pageSize: 10,
+  total: 0
+})
+
+const teacherList = ref([])
+
+getTeacherListAPI(data.value).then((resp) => {
+  teacherList.value = resp.data.records
+  data.value.total = resp.data.total
+})
 
 </script>
 
@@ -10,11 +26,11 @@ import TeacherItem from './components/TeacherItem.vue';
     </div>
     <div>
       <div class="title">全部指导老师</div>
-      <div class="total">共 10 位老师</div>
+      <div class="total">共 {{ data.total }} 位老师</div>
     </div>
   </div>
   <div class="teacher-group container">
-    <teacher-item v-for="x in 10" :key="x" />
+    <teacher-item v-for="item in teacherList" :key="item.id" :data="item" />
   </div>
 </template>
 

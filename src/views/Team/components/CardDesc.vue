@@ -17,7 +17,6 @@ const handleClickOutside = (e) => {
 watch(
   () => props.hide,
   (hidden) => {
-    console.log('watch', hidden)
     if(!hidden)
       document.addEventListener('click', handleClickOutside)
     else

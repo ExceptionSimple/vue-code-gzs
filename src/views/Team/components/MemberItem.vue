@@ -1,4 +1,22 @@
 <script setup>
+const props = defineProps({
+  data: { type: Object, default: {} }
+})
+
+if(props.data.direction)
+  props.data.direction = props.data.direction.split(',')
+else
+  props.data.direction = []
+
+const switchGrade = (grade) => {
+  switch(grade) {
+    case 1: return '大一'
+    case 2: return '大二'
+    case 3: return '大三'
+    case 4: return '大四'
+    default: return '已毕业'
+  }
+}
 </script>
 
 <template>
@@ -8,16 +26,13 @@
         <img src="@/assets/avatar.jpg" alt="" />
       </div>
       <div class="right">
-        <div class="name">陶智坤</div>
-        <div class="tag">工作室·室长</div>
-        <div class="grade">大二</div>
+        <div class="name">{{ data.name }}</div>
+        <div class="tag">{{ data.title }}</div>
+        <div class="grade">{{ switchGrade(data.grade) }}</div>
       </div>
     </div>
     <div class="bottom line-ellipsis">
-      <el-tag effect="light" round>Java</el-tag>
-      <el-tag effect="light" round>Java</el-tag>
-      <el-tag effect="light" round>Java</el-tag>
-      <el-tag effect="light" round>Java</el-tag>
+      <el-tag effect="light" round v-for="item in data.direction">{{ item }}</el-tag>
     </div>
   </div>
 </template>

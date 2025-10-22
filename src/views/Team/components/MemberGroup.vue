@@ -4,6 +4,15 @@ import router from '@/router';
 import MemberItem from './MemberItem.vue';
 import CardDesc from './CardDesc.vue';
 
+import { mainShowAPI } from '@/api/student';
+
+const data = ref([])
+
+mainShowAPI().then(resp => {
+  if(resp.code !== 1) return
+  data.value = resp.data
+})
+
 const hideFlag = ref(true)
 
 const showDesc = (e, id) => {
@@ -23,7 +32,7 @@ const closeCardDesc = () => {
       <el-button @click="router.push('/more_member')">查看所有成员</el-button>
     </div>
     <div class="item-group">
-      <member-item v-for="x in 8" :key="x" @click="showDesc($event, x)" />
+      <member-item v-for="item in data" :key="item.id" @click="showDesc($event, item)" :data="item" />
     </div>
   </div>
   <card-desc :hide="hideFlag" @close="closeCardDesc" />

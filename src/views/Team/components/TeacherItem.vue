@@ -1,4 +1,13 @@
 <script setup>
+const props = defineProps({
+  data: { type: Object, default: {} }
+})
+
+if(props.data.direction)
+  props.data.direction = props.data.direction.split(',')
+else
+  props.data.direction = []
+
 </script>
 
 <template>
@@ -8,15 +17,15 @@
         <img src="@/assets/avatar.jpg" alt="" />
       </div>
       <div class="right">
-        <div class="name">俞文静</div>
-        <div class="tag">指导老师</div>
+        <div class="name">{{ data.name }}</div>
+        <div class="tag">{{ data.title }}</div>
       </div>
       <div class="research-direction">
-        <el-tag effect="light">语音识别</el-tag>
+        <el-tag effect="light" round v-for="item in data.direction">{{ item }}</el-tag>
       </div>
     </div>
     <div class="bottom">
-      <div class="desc">在计算机领域...</div>
+      <div class="desc">{{ data.introduce }}</div>
     </div>
   </div>
 </template>
@@ -67,5 +76,8 @@
 .item .research-direction .title {
   font-size: 20px;
   font-weight: 700;
+}
+.item .el-tag {
+  margin-right: 5px;
 }
 </style>
