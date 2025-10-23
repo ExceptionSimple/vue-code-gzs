@@ -25,7 +25,7 @@ else
       </div>
     </div>
     <div class="bottom">
-      <div class="desc">{{ data.introduce }}</div>
+      <div class="desc line-ellipsis">{{ data.introduce }}</div>
     </div>
   </div>
 </template>
