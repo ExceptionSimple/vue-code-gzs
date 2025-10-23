@@ -15,7 +15,11 @@ const featureData = [
 </script>
 
 <template>
-  <big-screen-content />
+  <Suspense>
+    <template #default>
+      <big-screen-content />
+    </template>
+  </Suspense>
   <div class="feature-group container">
     <feature-card v-for="x in featureData" :key="x" :data="x" />
   </div>

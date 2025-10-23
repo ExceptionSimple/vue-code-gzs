@@ -1,8 +1,23 @@
 <script lang="ts" setup>
+import { ref } from "vue";
 import { TypedComponent, type TypedOptions } from "typed-vue3";
+import { getGzsBaseInfoAPI } from "@/api/baseInfo";
+
+const data = ref({
+  GZS_NAME: '',
+  GZS_XCY: ''
+})
+
+const resp = await getGzsBaseInfoAPI();
+if(resp.code === 1) {
+  data.value = resp.data
+  resp.data.forEach(e => {
+    data.value[e.key] = e.value
+  })
+}
 
 const options1: TypedOptions = {
-  strings: ["智慧代码工作室"],
+  strings: [data.value.GZS_NAME],
   typeSpeed: 80,
   // loop: true,
   onComplete(self) {
@@ -13,7 +28,7 @@ const options1: TypedOptions = {
   }
 };
 const options2: TypedOptions = {
-  strings: ["在这里，用代码改变世界，与志同道合的伙伴一起成长"],
+  strings: [data.value.GZS_XCY],
   typeSpeed: 60,
   // loop: true,
   onComplete(self) {
