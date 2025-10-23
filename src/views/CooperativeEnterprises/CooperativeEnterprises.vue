@@ -1,5 +1,22 @@
 <script setup>
+import { ref } from 'vue';
 import EnterprisesItem from './components/EnterprisesItem.vue';
+import { getEnterpriseListAPI } from '@/api/enterprise';
+
+const enterpriseList = ref([])
+
+const data = ref({
+  page: 1,
+  pageSize: 10,
+  total: 0
+})
+
+getEnterpriseListAPI(data.value).then(resp => {
+  if(resp.code !== 1) return
+  enterpriseList.value = resp.data.records
+  data.value.total = resp.data.total
+})
+
 </script>
 
 <template>
@@ -11,7 +28,7 @@ import EnterprisesItem from './components/EnterprisesItem.vue';
     <div class="sub-title">感谢各合作企业单位的支持与信任，共同推动技术创新与人才培养</div>
   </div>
   <div class="enterprises-group container">
-    <enterprises-item />
+    <enterprises-item v-for="item in enterpriseList" :key="item.id" :data="item" />
   </div>
 </template>
 

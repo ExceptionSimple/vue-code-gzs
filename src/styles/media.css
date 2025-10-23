@@ -76,4 +76,7 @@ body {
   .enterprises-item .desc {
     font-size: 0.3rem !important;
   }
+  .enterprises-item .cover {
+    width: 4rem;
+  }
 }

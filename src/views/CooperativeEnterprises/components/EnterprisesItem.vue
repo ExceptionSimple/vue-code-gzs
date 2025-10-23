@@ -1,17 +1,24 @@
 <script setup>
+const props = defineProps({
+  data: { type: Object, default: {} }
+})
+
+if(props.data.direction)
+  props.data.direction = props.data.direction.split(',')
+else
+  props.data.direction = []
 </script>
 
 <template>
   <div class="enterprises-item">
     <div class="cover">
-      <img src="@/assets/avatar.jpg" alt="" />
+      <img :src="data.logo" alt="" />
     </div>
     <div class="info">
-      <div class="title">xxx有限公司</div>
-      <div class="desc">提供前沿技术支持与项目合作机会，共同推进技术创新发展。与工作室建立深度战略合作关系，在技术研发、人才培养、项目孵化等多个领域展开全方位合作。</div>
+      <div class="title">{{ data.name }}</div>
+      <div class="desc two-line-ellipsis">{{ data.introduce }}</div>
       <div class="tags">
-        <el-tag effect="light" round>Java</el-tag>
-        <el-tag effect="light" round>Agent</el-tag>
+        <el-tag effect="light" round v-for="item in data.direction">{{ item }}</el-tag>
       </div>
     </div>
   </div>
@@ -44,8 +51,16 @@
   border-radius: 10px;
   overflow: hidden;
 }
+.enterprises-item .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .enterprises-item .info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .enterprises-item .title {
   font-size: 0.4rem;
