@@ -15,7 +15,9 @@ mainShowAPI().then(resp => {
 
 const hideFlag = ref(true)
 
+const tid = ref(null)
 const showDesc = (e, id) => {
+  tid.value = id
   e.stopPropagation()
   hideFlag.value = false
 }
@@ -32,11 +34,11 @@ const closeCardDesc = () => {
       <el-button @click="router.push('/more_teacher')">查看所有老师</el-button>
     </div>
     <div class="item-group">
-      <!-- <teacher-item @click="showDesc($event, 1)" /> -->
-      <teacher-item v-for="item in data" :key="item.id" :data="item" />
+      <!-- <teacher-item  /> -->
+      <teacher-item v-for="item in data" :key="item.id" :data="item" @click="showDesc($event, item.id)" />
     </div>
   </div>
-  <card-desc :hide="hideFlag" @close="closeCardDesc" />
+  <card-desc :hide="hideFlag" @close="closeCardDesc" :id="tid" type="TEACHER" />
 </template>
 
 <style scoped>

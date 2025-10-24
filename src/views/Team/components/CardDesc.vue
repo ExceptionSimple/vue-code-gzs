@@ -1,8 +1,12 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { findByIdAPI as findTeacherById } from '@/api/teacher'
+import { findByIdAPI as findStudentById } from '@/api/student'
 
 const props = defineProps({
-  hide: { type: Boolean, default: true }
+  hide: { type: Boolean, default: true },
+  type: { type: String, default: 'TEACHER' },
+  id: { type: Number, default: null }
 })
 const emit = defineEmits(['close'])
 
@@ -11,6 +15,24 @@ const cardDescRef = ref(null)
 const handleClickOutside = (e) => {
   if(cardDescRef.value && !cardDescRef.value.contains(e.target)) {
     emit('close')
+  }
+}
+
+const data = ref({})
+
+const findById = (id) => {
+  if(props.type === 'TEACHER') {
+    findTeacherById(id).then(resp => {
+      if(resp.code !== 1) return
+      data.value = resp.data
+      data.value.direction = data.value.direction.split(",")
+    })
+  } else if(props.type === 'STUDENT') {
+    findStudentById(id).then(resp => {
+      if(resp.code !== 1) return
+      data.value = resp.data
+      data.value.direction = data.value.direction.split(",")
+    })
   }
 }
 
@@ -24,6 +46,14 @@ watch(
   },
   { immediate: true }
 )
+watch(
+  () => props.id,
+  (id) => {
+    if(id == null) return
+    findById(id)
+  },
+  { immediate: true }
+)
 
 // onMounted(() => {
 //   document.addEventListener('click', handleClickOutside)
@@ -34,28 +64,41 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div :class="['card-desc', { 'active': !hide }]" ref="cardDescRef">
-    <div class="top">
+  <div :class="['card-desc', { 'active': !hide }]">
+    <div :class="['top', { 'active': !hide }]" ref="cardDescRef">
       <div class="avatar">
-        <img src="@/assets/1.png" alt="">
+        <img :src="data.avatar" alt="">
       </div>
       <div class="info">
-        <div class="name">张修博</div>
-        <div class="title">指导老师</div>
+        <div class="name">{{ data.name }}</div>
+        <div class="title">{{ data.title }}</div>
         <div class="tags">
-          <el-tag effect="light">语音识别</el-tag>
-          <el-tag effect="light">自动驾驶</el-tag>
+          <el-tag effect="light" v-for="item in data.direction">{{ item }}</el-tag>
+        </div>
+        <div class="introduce">
+          {{ data.introduce }}
         </div>
       </div>
-    </div>
-    <div class="introduce">
-      在计算机人工智能领域中是位超级无敌巨佬！！！实力与颜值双双在线！！！
     </div>
   </div>
 </template>
 
 <style scoped>
 .card-desc {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0, .2);
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+}
+.card-desc.active {
+  opacity: 1;
+}
+.card-desc .top {
   width: 450px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -70,14 +113,15 @@ onBeforeUnmount(() => {
   opacity: 0;
   pointer-events: none; /* 防止隐藏时可点 */
 }
-.card-desc.active {
+.card-desc .top.active {
   opacity: 1;
   transform: translate(-50%, -50%) rotateY(360deg);
   pointer-events: auto;
 }
 .card-desc .top {
-  display: flex;
+  display: grid;
   gap: 20px;
+  grid-template-columns: 150px auto;
 }
 .card-desc .top .avatar {
   width: 150px;
@@ -95,14 +139,13 @@ onBeforeUnmount(() => {
 .card-desc .top .tags {
   margin-top: 10px;
 }
-
 .card-desc .top .el-tag {
   margin-top: 5px;
   margin-right: 5px;
 }
 .card-desc .introduce {
   color: var(--normal-text);
-  font-size: 18px;
+  font-size: 14px;
   margin-top: 20px;
 }
 

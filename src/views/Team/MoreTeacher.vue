@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import TeacherItem from './components/TeacherItem.vue';
+import CardDesc from './components/CardDesc.vue';
 
 import { getTeacherListAPI } from '@/api/teacher';
 
@@ -17,6 +18,18 @@ getTeacherListAPI(data.value).then((resp) => {
   data.value.total = resp.data.total
 })
 
+const hideFlag = ref(true)
+
+const tid = ref(null)
+const showDesc = (e, id) => {
+  tid.value = id
+  e.stopPropagation()
+  hideFlag.value = false
+}
+const closeCardDesc = () => {
+  hideFlag.value = true
+}
+
 </script>
 
 <template>
@@ -30,8 +43,9 @@ getTeacherListAPI(data.value).then((resp) => {
     </div>
   </div>
   <div class="teacher-group container">
-    <teacher-item v-for="item in teacherList" :key="item.id" :data="item" />
+    <teacher-item v-for="item in teacherList" :key="item.id" :data="item" @click="showDesc($event, item.id)" />
   </div>
+  <card-desc :hide="hideFlag" @close="closeCardDesc" :id="tid" type="TEACHER" />
 </template>
 
 <style scoped>

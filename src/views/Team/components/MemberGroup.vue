@@ -15,7 +15,9 @@ mainShowAPI().then(resp => {
 
 const hideFlag = ref(true)
 
+const sid = ref(null)
 const showDesc = (e, id) => {
+  sid.value = id
   e.stopPropagation()
   hideFlag.value = false
 }
@@ -32,10 +34,10 @@ const closeCardDesc = () => {
       <el-button @click="router.push('/more_member')">查看所有成员</el-button>
     </div>
     <div class="item-group">
-      <member-item v-for="item in data" :key="item.id" @click="showDesc($event, item)" :data="item" />
+      <member-item v-for="item in data" :key="item.id" @click="showDesc($event, item.id)" :data="item" />
     </div>
   </div>
-  <card-desc :hide="hideFlag" @close="closeCardDesc" />
+  <card-desc :hide="hideFlag" @close="closeCardDesc" :id="sid" type="STUDENT" />
 </template>
 
 <style scoped>
