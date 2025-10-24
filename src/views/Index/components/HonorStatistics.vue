@@ -1,12 +1,18 @@
 <script setup>
 import { ref } from 'vue'
+import { getType1 } from '@/api/statistics';
 
 const data = ref([
-  { title: '活跃成员', total: '100+' },
+  { title: '核心成员', total: '100+' },
   { title: '活动举办', total: '100+' },
   { title: '获奖项目', total: '20+' },
   { title: '工作室历史', total: '5' },
 ])
+
+getType1().then(resp => {
+  if(resp.code !== 1) return
+  data.value = resp.data
+})
 
 </script>
 
