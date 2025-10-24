@@ -73,5 +73,6 @@ getGzsByKeyAPI("GZS_OUR_STORY").then(resp => {
   color: var(--normal-text);
   line-height: .40rem;
   font-size: .25rem;
+  padding: 0 10px;
 }
 </style>

@@ -92,8 +92,27 @@ body {
   .member-group .header h2 {
     font-size: 0.5rem !important;
   }
+  .about-me-info .title,
   .we-story .title,
   .award-winning-wall .header .title {
     font-size: 0.6rem !important;
+  }
+  .we-story .text,
+  .header .sub-title {
+    font-size: .40rem !important;
+  }
+  .card-desc .top .avatar {
+    width: 2rem;
+    height: 2.6667rem;
+  }
+  .card-desc .top .name {
+    font-size: .4rem !important;
+  }
+  .card-desc .top .title {
+    font-size: .3rem !important;
+  }
+  .card-desc .top {
+    grid-template-columns: auto !important;
+    gap: 0 !important;
   }
 }

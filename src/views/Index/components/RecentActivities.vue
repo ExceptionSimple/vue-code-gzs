@@ -3,11 +3,26 @@ import { ref } from 'vue';
 import router from '@/router';
 import { recentActivitiesAPI } from '@/api/activities';
 
+const options = [
+  {
+    value: 1,
+    label: '培训',
+  },
+  {
+    value: 2,
+    label: '校企合作',
+  },
+]
+
 const data = ref([])
 
 recentActivitiesAPI().then((resp) => {
   if(resp.code !== 1) return
   data.value = resp.data
+  data.value.forEach(e => {
+    const t = options.find(x => x.value === e.type)
+    e.type = t.label
+  })
 })
 
 </script>

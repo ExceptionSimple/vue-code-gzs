@@ -97,10 +97,11 @@ onBeforeUnmount(() => {
 }
 .card-desc.active {
   opacity: 1;
+  pointer-events: unset;
 }
 .card-desc .top {
-  width: 450px;
-  padding: 20px;
+  width: 6rem;
+  padding: .2667rem;
   border: 1px solid #ccc;
   border-radius: 10px;
   position: fixed;
@@ -124,20 +125,17 @@ onBeforeUnmount(() => {
   grid-template-columns: 150px auto;
 }
 .card-desc .top .avatar {
-  width: 150px;
-  height: 200px;
+  width: 2rem;
+  height: 2.6667rem;
 }
 .card-desc .top .name {
-  font-size: 25px;
+  font-size: .33rem;
   font-weight: 700;
 }
 .card-desc .top .title {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 0.26rem;
   color: var(--theme-color);
-}
-.card-desc .top .tags {
-  margin-top: 10px;
 }
 .card-desc .top .el-tag {
   margin-top: 5px;
