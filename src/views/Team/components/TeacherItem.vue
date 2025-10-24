@@ -20,12 +20,10 @@ else
         <div class="name">{{ data.name }}</div>
         <div class="tag">{{ data.title }}</div>
       </div>
-      <div class="research-direction">
-        <el-tag effect="light" round v-for="item in data.direction">{{ item }}</el-tag>
-      </div>
+      <div class="introduce three-line-ellipsis">{{ data.introduce }}</div>
     </div>
     <div class="bottom">
-      <div class="desc line-ellipsis">{{ data.introduce }}</div>
+      <el-tag effect="light" round v-for="item in data.direction">{{ item }}</el-tag>
     </div>
   </div>
 </template>
@@ -65,15 +63,15 @@ else
 }
 .item .bottom {
   margin-top: 15px;
+}
+
+.item .introduce {
+  flex: 1;
+  margin-left: 20px;
   color: var(--normal-text);
   font-size: 16px;
 }
-
-.item .research-direction {
-  flex: 1;
-  margin-left: 20px;
-}
-.item .research-direction .title {
+.item .introduce .title {
   font-size: 20px;
   font-weight: 700;
 }

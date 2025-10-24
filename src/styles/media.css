@@ -79,4 +79,21 @@ body {
   .enterprises-item .cover {
     width: 4rem;
   }
+  .member-group .item-group {
+    grid-template-columns: auto !important;
+  }
+  .teacher-group .item-group .bottom,
+  .member-group .item-group .bottom {
+    margin-top: 0 !important;
+  }
+  .teacher-group .header .iconfont,
+  .member-group .header .iconfont,
+  .teacher-group .header h2,
+  .member-group .header h2 {
+    font-size: 0.5rem !important;
+  }
+  .we-story .title,
+  .award-winning-wall .header .title {
+    font-size: 0.6rem !important;
+  }
 }

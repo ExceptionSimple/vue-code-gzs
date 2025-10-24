@@ -71,7 +71,7 @@ getGzsByKeyAPI("GZS_OUR_STORY").then(resp => {
 }
 .we-story .text {
   color: var(--normal-text);
-  line-height: 30px;
+  line-height: .40rem;
   font-size: .25rem;
 }
 </style>

@@ -83,6 +83,7 @@ onUnmounted(() => {
   right: 0;
   bottom: 50px;
   left: 0;
+  z-index: 999;
 }
 .el-header {
   height: 50px;

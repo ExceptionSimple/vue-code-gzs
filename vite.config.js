@@ -38,6 +38,6 @@ export default defineConfig({
   },
   server: {
     port: 9991,
-    // host: '0.0.0.0'
+    host: '0.0.0.0'
   }
 })
