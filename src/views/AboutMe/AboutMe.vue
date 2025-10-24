@@ -1,6 +1,17 @@
 <script setup>
+import { ref } from 'vue';
 import AwardWinningWall from './components/AwardWinningWall.vue';
 import AboutMeInfo from './components/AboutMeInfo.vue';
+import { getGzsByKeyAPI } from '@/api/baseInfo';
+
+const data = ref({
+  GZS_OUR_SOTRY: ''
+})
+
+getGzsByKeyAPI("GZS_OUR_STORY").then(resp => {
+  if(resp.code !== 1) return
+  data.value.GZS_OUR_SOTRY = resp.data.value
+})
 </script>
 
 <template>
@@ -13,11 +24,7 @@ import AboutMeInfo from './components/AboutMeInfo.vue';
   </div>
   <div class="we-story">
     <h2 class="title">我们的故事</h2>
-    <div class="text">
-      代码工作室成立于2020年，由一群热爱编程的学生创建。我们的初衷是为校园中热爱技术的同学们提供一个学习、交流和成长的平台。<br />
-      四年来，我们从最初的十几个人发展到现在拥有100多名活跃成员的技术社团。我们举办了数十场技术讲座、工作坊和竞赛活动，培养了一批又一批优秀的程序员。 <br />
-      我们相信，技术改变世界，而教育改变未来。在这里，无论你是编程新手还是技术达人，都能找到属于自己的位置，与志同道合的伙伴一起追求技术梦想。
-    </div>
+    <div class="text" v-html="data.GZS_OUR_SOTRY"></div>
   </div>
   <AwardWinningWall style="margin-top: 50px;" />
   <AboutMeInfo style="margin-top: 50px; margin-bottom: 100px;" />
