@@ -15,7 +15,7 @@ import ActivitiesStatistics from './components/ActivitiesStatistics.vue';
   </div>
   <coming-soon class="container" style="margin-bottom: 50px;" />
   <past-activities class="container" />
-  <activities-statistics class="container" />
+  <!-- <activities-statistics class="container" /> -->
 </template>
 
 <style scoped>

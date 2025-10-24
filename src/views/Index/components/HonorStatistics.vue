@@ -3,10 +3,10 @@ import { ref } from 'vue'
 import { getType1 } from '@/api/statistics';
 
 const data = ref([
-  { title: '核心成员', total: '100+' },
-  { title: '活动举办', total: '100+' },
-  { title: '获奖项目', total: '20+' },
-  { title: '工作室历史', total: '5' },
+  { title: '核心成员', total: '-' },
+  { title: '活动举办', total: '-' },
+  { title: '获奖项目', total: '-' },
+  { title: '工作室历史', total: '-' },
 ])
 
 getType1().then(resp => {
