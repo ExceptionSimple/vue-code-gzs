@@ -38,6 +38,15 @@ export default defineConfig({
   },
   server: {
     port: 9991,
-    host: '0.0.0.0'
+    // host: '0.0.0.0'
+  },
+  build: {
+    minify: 'terser',
+    terserOptions: {
+      compress: { // 生产环境移除 console
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
   }
 })
