@@ -35,7 +35,7 @@ const toURL = (url) => {
           <li><span class="iconfont">&#xe680;</span> {{ item.time }} </li>
           <li><span class="iconfont">&#xe790;</span> {{ item.location }} </li>
           <!-- 暂时不显示这项 -->
-          <li style="display: none;"><span class="iconfont">&#xe65b;</span> 已报名 xx 人 </li>
+          <!-- <li><span class="iconfont">&#xe65b;</span> 已报名 xx 人 </li> -->
         </ul>
       </div>
     </div>

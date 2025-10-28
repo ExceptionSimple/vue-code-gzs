@@ -29,7 +29,8 @@ if(width <= 768) {
 .el-footer {
   margin-top: 20px;
   background: var(--bg-color);
-  padding: 10px 0;
+  padding: 30px 0;
+  height: unset;
 }
 .el-footer .container {
   display: flex;
