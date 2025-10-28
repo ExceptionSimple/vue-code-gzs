@@ -50,6 +50,12 @@ else
   border-radius: 100px;
   overflow: hidden;
 }
+.item .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
 .item .right {
   margin-left: 10px;
 }
