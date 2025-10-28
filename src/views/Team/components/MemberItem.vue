@@ -23,7 +23,7 @@ const switchGrade = (grade) => {
   <div class="item">
     <div class="top">
       <div class="avatar">
-        <img src="@/assets/avatar.jpg" alt="" />
+        <img :src="data.avatar" alt="" />
       </div>
       <div class="right">
         <div class="name">{{ data.name }}</div>

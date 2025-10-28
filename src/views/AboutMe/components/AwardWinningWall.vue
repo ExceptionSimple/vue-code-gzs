@@ -5,9 +5,9 @@ import { allAwardAPI } from '@/api/award'
 const awardList = ref([])
 
 allAwardAPI().then(resp => {
-  console.log(resp.data)
   if(resp.code !== 1) return
   awardList.value = resp.data
+  while(awardList.value.length < 60) awardList.value.push(...resp.data)
 })
 
 const awardTrackRef = ref(null)
@@ -18,12 +18,13 @@ onMounted(async () => {
   const track = awardTrackRef.value
   if (!track) return
 
+  const container = track.parentNode
+
   // 克隆内容一份，形成连续滚动效果
   const clone = track.cloneNode(true)
   track.parentNode.appendChild(clone)
   // clone.classList.add('clone') // 方便调试时识别（识别是否是复制的）
 
-  const container = track.parentNode
   let scrollLeft = 0
   const speed = 0.8 // 滚动速度（数值越大越快）
 
