@@ -20,7 +20,7 @@ if(width <= 768) {
   <el-footer>
     <div class="container">
       <p>Copyright © 2025-2025 广州软件学院·智慧代码工作室 版权所有</p>
-      <a href="https://beian.miit.gov.cn/" target="_blank">ICP备案/许可证号：xxxx号</a>
+      <a href="https://beian.miit.gov.cn/" target="_blank">ICP备案/许可证号：2025480968号</a>
     </div>
   </el-footer>
 </template>

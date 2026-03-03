@@ -34,6 +34,10 @@ body {
   .activities-group {
     grid-template-columns: auto auto !important;
   }
+  .more-member-group,
+  .member-group .item-group {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 }
 
 @media(max-width: 768px) {
@@ -60,6 +64,10 @@ body {
   .activities-group .item {
     max-width: none !important;
   }
+  .more-member-group,
+  .member-group .item-group {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 @media(max-width: 576px) {
@@ -79,6 +87,7 @@ body {
   .enterprises-item .cover {
     width: 4rem;
   }
+  .more-member-group,
   .member-group .item-group {
     grid-template-columns: auto !important;
   }
@@ -116,3 +125,4 @@ body {
     gap: 0 !important;
   }
 }
+

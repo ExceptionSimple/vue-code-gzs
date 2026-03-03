@@ -43,7 +43,7 @@ const closeCardDesc = () => {
       <div class="total">共 {{ data.total }} 位成员</div>
     </div>
   </div>
-  <div class="teacher-group container">
+  <div class="more-member-group container">
     <member-item v-for="item in studentList" :key="item.id" @click="showDesc($event, item.id)" :data="item" />
   </div>
   <card-desc :hide="hideFlag" @close="closeCardDesc" :id="sid" type="STUDENT" />
@@ -80,10 +80,10 @@ const closeCardDesc = () => {
   color: var(--normal-text);
   font-size: .3rem;
 }
-.teacher-group {
+.more-member-group {
   margin-top: 50px;
   display: grid;
-  grid-template-columns: auto auto auto auto ;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 </style>

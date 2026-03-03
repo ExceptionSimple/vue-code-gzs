@@ -61,7 +61,7 @@ const closeCardDesc = () => {
 }
 .item-group {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
   margin-top: 20px;
 }
 
